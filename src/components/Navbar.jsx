@@ -11,13 +11,13 @@ export const Navbar = () => {
 
         <div className="p-4 flex justify-around border-b-2 border-solid  border-violet-50 z-100">
 
-         <img src={airbnb} className="w-20 h-6 mr-20px"/>
+         <img src={airbnb} className="w-20 h-6 mr-20px" alt=""/>
         
          <div className="flex w-7/12 justify-evenly">
            <div className="flex w-4/12 justify-center border-violet-100 border-2 border-solid rounded-full ">
 
            <input id="search-input" type='text' placeholder="Start your search here" className="rounded-full text-xs text-semibold w-12/12 h-7 mr-1"/>
-           <img className="h-6 rounded-full mt-1" src={searchicon}/>
+           <img className="h-6 rounded-full mt-1" src={searchicon} alt=''/>
             
            </div>
          
@@ -34,8 +34,8 @@ export const Navbar = () => {
 
 <div className="flex items-center">
 
-<img className="w-4 h-4" src={burger} />
-  <img className="w-6 rounded-full ml-1"  src={signinicon} />
+<img className="w-4 h-4" src={burger} alt=""/>
+  <img className="w-6 rounded-full ml-1"  src={signinicon} alt=""/>
 </div>
 
 </button>
