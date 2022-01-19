@@ -4,7 +4,7 @@ export const Navbar = () => {
 
       return(
 
-        <div className="static">
+        <div>
 
         <div className="p-4 flex justify-around border-b-2 border-solid  border-violet-50 z-100">
 
