@@ -9,10 +9,10 @@ export const Landingpage = () => {
 
 ]
 
-const footer_d1 = ["Help Centre" , "Safety information" , 'Our COVID-19 Response' ];
-const footer_d2 = ['Airbnb.org: disaster relief housing' ,'Support Afghan refugees' ,'Celebrating diversity & belonging'];
-const footer_d3  = ['Try hosting','AirCover: protection for Hosts','Explore hosting resources'];
-const footer_d4 = ['Newsroom' ,'Learn about new features','Letter from our founders'];
+const footer_d1 = ["Help Centre" , "Safety information" , 'Our COVID-19 Response','Cancellation options','Supporting people with disabilities','Report a neighbourhood concern' ];
+const footer_d2 = ['Airbnb.org: disaster relief housing' ,'Support Afghan refugees' ,'Celebrating diversity & belonging','Combating discrimination'];
+const footer_d3  = ['Try hosting','AirCover: protection for Hosts','Explore hosting resources','Visit our community forum','How to host responsibly'];
+const footer_d4 = ['Newsroom' ,'Learn about new features','Letter from our founders','Careers','Investors','Airbnb Luxe'];
 
 const lastline = "© 2022 Airbnb, Inc.·Privacy·Terms·Sitemap·Company details";
 const lastline1 = "English (IN)  ₹ INR"
@@ -72,25 +72,25 @@ const lastline1 = "English (IN)  ₹ INR"
 
          <div>
              <h3 className="text-sm font-bold mt-5 mb-5">Support</h3>
-           {footer_d1.map((e) => <h4 className="text-xs mt-2 mb-2">{e}</h4>)}
+           {footer_d1.map((e) => <h4 className="text-xs mt-2 mb-2 opacity-95">{e}</h4>)}
 
          </div>
 
          <div>
              <h3 className="text-sm font-bold mt-5 mb-5">Community</h3>
-           {footer_d2.map((e) => <h4 className="text-xs mt-2 mb-2">{e}</h4>)}
+           {footer_d2.map((e) => <h4 className="text-xs mt-2 mb-2 opacity-95">{e}</h4>)}
 
          </div>
 
          <div>
              <h3 className="text-sm font-bold mt-5 mb-5">Hosting</h3>
-           {footer_d3.map((e) => <h4 className="text-xs mt-2 mb-2">{e}</h4>)}
+           {footer_d3.map((e) => <h4 className="text-xs mt-2 mb-2 opacity-95">{e}</h4>)}
 
          </div>
 
          <div>
              <h3 className="text-sm font-bold mt-5 mb-5">About</h3>
-           {footer_d4.map((e) => <h4 className="text-xs mt-2 mb-2">{e}</h4>)}
+           {footer_d4.map((e) => <h4 className="text-xs mt-2 mb-2 opacity-95">{e}</h4>)}
 
          </div>
 
