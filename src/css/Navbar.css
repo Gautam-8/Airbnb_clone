@@ -1,15 +1,28 @@
-#bgimg{
-    padding:5%;
-    width:90% ; height:600px ;  margin:auto; 
-    background-image: url("https://a0.muscache.com/im/pictures/53e51dcb-8fad-4ce8-b61c-8a7a369267bf.jpg?im_w=1200");
-    background-size: 100%;
-    background-repeat:no-repeat;
-    background-position-y: center;
-    
-  }
-  
-  #bgimg button{
-    margin-top:40%;
-    margin-left:45%;
-   
-  }
+.search-data{
+  width: 300px;
+  height: 40px;
+  border-radius: 30px;
+  padding-left:15px ;
+}
+#showdebounce{
+    position: absolute;
+    margin-top: 50px;
+}
+.search-data:focus{
+    outline: none;
+}
+#showdebounce + h1 >ion-icon{
+   height: 30px;
+   width: 30px;
+    margin-left: 10px;
+    background-color: rgb(255, 56, 92);
+    color: white;
+    border-radius: 50%;
+    padding: 5px;
+}
+#search-outer{
+    border: 2px solid rgb(200, 211, 240);
+    padding: 6px 6px 2px 5px;
+    border-radius: 30px;
+}
+
