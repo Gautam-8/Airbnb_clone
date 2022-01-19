@@ -111,9 +111,9 @@ const lastline1 = "English (IN)  ₹ INR"
 </div>
        
 <div className="flex gap-2">
-            <img className="w-5 h-5" src={'https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-social-facebook-128.png'} />
-      <img className="w-5 h-5" src={'https://cdn3.iconfinder.com/data/icons/picons-social/57/03-twitter-128.png'} />
-      <img className="w-5 h-5" src={'https://cdn3.iconfinder.com/data/icons/picons-social/57/78-instagram-128.png'} />
+            <img className="w-5 h-5" src={'https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-social-facebook-128.png'} alt=""/>
+      <img className="w-5 h-5" src={'https://cdn3.iconfinder.com/data/icons/picons-social/57/03-twitter-128.png'} alt=""/>
+      <img className="w-5 h-5" src={'https://cdn3.iconfinder.com/data/icons/picons-social/57/78-instagram-128.png'} alt=""/>
 
 </div>
     
