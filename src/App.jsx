@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { Navbar } from './components/Navbar';
 import { Route,Routes } from 'react-router-dom';
+import { Landingpage } from './components/Landinpage';
 function App() {
   return (
     <div className="App">
@@ -9,7 +10,7 @@ function App() {
 
      <Routes>
      
-       <Route path="/" element={  <div >Hi</div>}>
+       <Route path="/" element={<Landingpage />}>
        </Route>
       
      </Routes>
