@@ -1,4 +1,4 @@
-import Navbar from "../css/Navbar.css"
+import "../CSS/Navbar.css"
 
 export const Landingpage = () => {
 
