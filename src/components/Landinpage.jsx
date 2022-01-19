@@ -1,4 +1,4 @@
-import "../css/Navbar.css"
+import "../css/Landingpage.css"
 
 export const Landingpage = () => {
 
