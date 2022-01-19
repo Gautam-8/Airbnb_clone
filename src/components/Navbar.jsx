@@ -1,4 +1,4 @@
-import image from "../images/airbnbimgg.png"
+import airbnb from "../images/airbnbimgg.png"
 import burger from "../images/burger.png"
 
 export const Navbar = () => {
@@ -9,7 +9,7 @@ export const Navbar = () => {
 
         <div className="p-4 flex justify-around border-b-2 border-solid  border-violet-50 z-100">
 
-         <img src={image} className="w-20 h-6 mr-20px"/>
+         <img src={airbnb} className="w-20 h-6 mr-20px"/>
         
          <div className="flex w-7/12 justify-evenly">
            <div className="flex w-4/12 justify-center border-violet-100 border-2 border-solid rounded-full ">
