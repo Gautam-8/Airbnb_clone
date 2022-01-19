@@ -22,7 +22,7 @@ export const  City=()=>{
             }
     return (<div>
         {
-            data.map(({}))
+           
         }
     </div>)
 }
