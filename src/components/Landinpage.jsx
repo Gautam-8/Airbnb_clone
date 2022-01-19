@@ -34,7 +34,7 @@ export const Landingpage = () => {
          {Place_arr.map((e) => (
 
                <div >
-               <img className="rounded-t-2xl pb-4 bg-red-600" src={e.image} />
+               <img className="rounded-t-2xl pb-4 bg-red-600" src={e.image} alt={e.name}/>
                 <h2 className="text-2xl pt-1 pl-2 pb-20 bg-red-600 text-purple-50 rounded-b-2xl mb-10" >{e.name}</h2>
                 </div>
 
