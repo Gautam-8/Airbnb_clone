@@ -1,8 +1,30 @@
 import image from "../images/airbnbimgg.png"
-
+import "../CSS/Navbar.css"
 export const Navbar = () => {
 
       return(
+
+        <div className="p-4 flex justify-around border-stone-900 border-solid border-2">
+         <img src={image} className="w-20 h-6 mr-20px"/>
+         <div className="flex" id="search-outer">
+           <input type='text' placeholder="start your search here" className="search-data"
+           onFocus={(e)=>{
+             e.target.style.border="none"
+           }} 
+           onChange={(e)=>{
+             document.getElementById("showdebounce").style.display="block"
+             if(!e.target.value)
+             document.getElementById("showdebounce").style.display="none"
+           }}
+           />
+           <div id="showdebounce" className="search-data" style={{display:"none"}}>
+             <h1>jkdadns,m</h1>
+             <h1>jkdadns,m</h1>
+             <h1>jkdadns,m</h1>
+             <h1>jkdadns,m</h1>
+             <h1>jkdadns,m</h1>
+           </div>
+           <h1><ion-icon name="search-outline"></ion-icon></h1>
 
         <div>
 
