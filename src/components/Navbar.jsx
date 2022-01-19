@@ -1,4 +1,5 @@
 import image from "../images/airbnbimgg.png"
+import burger from "../images/burger.png"
 
 export const Navbar = () => {
 
@@ -29,7 +30,7 @@ export const Navbar = () => {
 
 <div className="flex items-center">
 
-<img className="w-4 h-4" src={"https://cdn-icons.flaticon.com/png/128/2791/premium/2791777.png?token=exp=1642577975~hmac=e802f3334241bafbf11b02a611c17a5f"} />
+<img className="w-4 h-4" src={burger} />
   <img className="w-6 rounded-full ml-1"  src={"https://a0.muscache.com/defaults/user_pic-50x50.png?v=3"} />
 </div>
 
