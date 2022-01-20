@@ -19,8 +19,6 @@ const footer_d4 = ['Newsroom' ,'Learn about new features','Letter from our found
 const lastline = "© 2022 Airbnb, Inc.·Privacy·Terms·Sitemap·Company details";
 const lastline1 = "English (IN)  ₹ INR";
 
-const navigate = useNavigate();
-
  return (
 
     <div>
