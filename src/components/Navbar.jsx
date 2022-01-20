@@ -92,13 +92,13 @@ export const Navbar = () => {
 
        <button className="ml-4 border-2 border-solid border-indigo-50 rounded-full px-2 py-1">
 
-<div className="flex items-center">
+        <div className="flex items-center">
 
-<img className="w-4 h-4" src={burger} alt=""/>
-  <img className="w-6 rounded-full ml-1"  src={signinicon} alt=""/>
-</div>
+       <img className="w-4 h-4" src={burger} alt=""/>
+        <img className="w-6 rounded-full ml-1"  src={signinicon} alt=""/>
+       </div>
 
-</button>
+         </button>
            </div> 
 
 
