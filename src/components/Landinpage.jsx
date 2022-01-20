@@ -1,4 +1,5 @@
-import "../css/Landingpage.css"
+import "../css/Landingpage.css";
+import { useNavigate } from "react-router-dom";
 
 export const Landingpage = () => {
 
@@ -15,7 +16,9 @@ const footer_d3  = ['Try hosting','AirCover: protection for Hosts','Explore host
 const footer_d4 = ['Newsroom' ,'Learn about new features','Letter from our founders','Careers','Investors','Airbnb Luxe'];
 
 const lastline = "© 2022 Airbnb, Inc.·Privacy·Terms·Sitemap·Company details";
-const lastline1 = "English (IN)  ₹ INR"
+const lastline1 = "English (IN)  ₹ INR";
+
+const navigate = useNavigate();
 
  return (
 
