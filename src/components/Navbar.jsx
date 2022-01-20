@@ -25,7 +25,7 @@ export const Navbar = () => {
            <div className="flex w-4/12 justify-center border-violet-100 border-2 border-solid rounded-full ">
 
 
-           <input autocomplete="off" type='text' placeholder="start your search here" className="rounded-full text-xs text-semibold w-12/12 h-7 mr-1 focus:outline-none"
+           <input autocomplete="off" type='text' placeholder="Start your search here" className="rounded-full text-xs text-black text-semibold w-12/12 h-7 mr-1 focus:outline-none"
            onChange={(e)=>{
              if(!e.target.value.length){
                document.getElementById("showdebounce").style.display="none";
