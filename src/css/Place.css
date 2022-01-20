@@ -36,3 +36,20 @@ h1{
 #five-images>div:nth-child(2) >img {
 width:300px;
 }
+
+.instruction > p{
+  margin-left: 60px;
+  line-height: 15px;
+  font-size: 14px;
+}
+#middle-data{
+    display: grid;
+    justify-content: space-around;
+    grid-template-columns: 60% 30%;
+}
+.instruction > img{
+    margin-left: 100px;
+    height: 300px;
+    width: 300px;
+    border-radius: 50px;
+}
