@@ -19,7 +19,7 @@ export const Navbar = () => {
 
         <div className="p-4 flex justify-around border-b-2 border-solid  border-violet-50 z-100">
 
-         <img src={airbnb} className="w-20 h-6 mr-20px" alt=""/>
+             <Link to={'/'}> <img src={airbnb} className="w-20 h-6 mr-20px" alt=""/></Link>
         
          <div className="flex w-7/12 justify-evenly">
            <div className="flex w-4/12 justify-center border-violet-100 border-2 border-solid rounded-full ">
