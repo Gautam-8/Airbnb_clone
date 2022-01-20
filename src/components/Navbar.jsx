@@ -65,7 +65,9 @@ export const Navbar = () => {
            />
          <div id="showdebounce" className="flex w-4/12 justify-center border-violet-100 border-2 border-solid rounded-full">
          {debounceArr.map((element,id)=>(
-                 <h1> <Link to={`/city/${element}`} key={id} style={{margin:"10px"}}>{element}</Link> </h1>
+                 <h1 onClick={()=>{
+                   document.getElementById("showdebounce").style.display="none"
+                 }}> <Link to={`/city/${element}`} key={id} style={{margin:"10px"}}>{element}</Link> </h1>
                  ))
          }
            </div>
