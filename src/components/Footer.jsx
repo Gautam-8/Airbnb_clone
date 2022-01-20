@@ -9,10 +9,11 @@ const lastline = "© 2022 Airbnb, Inc.·Privacy·Terms·Sitemap·Company details
 const lastline1 = "English (IN)  ₹ INR";
 
     return (
-        
-<div>
 
-<div className="flex justify-center gap-20 mt-10 pb-10 bg-gray-100">
+<div >
+    <div className="h-10"></div>
+
+<div className="flex justify-center gap-20 mt-14 pb-10 bg-gray-100">
 
 <div>
     <h3 className="text-sm font-bold mt-5 mb-5">Support</h3>
