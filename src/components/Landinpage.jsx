@@ -20,7 +20,7 @@ const lastline1 = "English (IN)  ₹ INR"
  return (
 
     <div>
-          <div style={{width:"100%" ,backgroundColor:"black"}}>
+          <div className="w-full bg-black">
               <div id='bgimg'>
           <button className="text-violet-800 text-sm text-bold py-3 bg-white px-5 rounded-full" > I'm flexible</button>
           </div>
