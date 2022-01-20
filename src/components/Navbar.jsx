@@ -14,10 +14,10 @@ export const Navbar = () => {
   let [searchText,setSearchText]=useState("");
   let timerId;
       return(
-
+<>
         <div className="fixed w-full bg-white z-50">
 
-        <div className="p-4 flex justify-around border-b-2 border-solid  border-violet-50 z-100">
+        <div className="p-4 flex justify-around border-b-2 border-solid  border-violet-50">
 
              <Link to={'/'}> <img src={airbnb} className="w-20 h-6 mr-20px" alt=""/></Link>
         
@@ -100,9 +100,11 @@ export const Navbar = () => {
 
          </button>
            </div> 
+          </div>
+  </div>
 
 
-        </div>
-        </div>
+
+</>
       )
 }
