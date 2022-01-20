@@ -22,7 +22,13 @@ const lastline1 = "English (IN)  ₹ INR"
     <div>
           <div className="w-full bg-black">
               <div id='bgimg'>
-          <button className="text-violet-800 text-sm text-bold py-3 bg-white px-5 rounded-full" > I'm flexible</button>
+                <div className="text-center mt-96">
+
+                <h1 className="text-4xl text-white mb-4">Not sure where to go? Perfect.</h1>
+          <button className="text-violet-800 text-sm text-bold py-3 bg-white px-5 rounded-full mt-1" > I'm flexible</button>
+
+                </div>
+               
           </div>
          </div>
 
