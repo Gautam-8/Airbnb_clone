@@ -14,7 +14,7 @@ export const Landingpage = () => {
  return (
 
     <div>
-      <div className="h-14"></div>
+     
           <div className="w-full bg-black">
               <div id='bgimg'>
                 <div className="text-center mt-96">
