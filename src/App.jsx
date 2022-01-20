@@ -5,6 +5,7 @@ import { Route,Routes } from 'react-router-dom';
 import { Landingpage } from './components/Landinpage';
 import { City } from './components/City';
 import { Place } from './components/Place';
+import { Footer } from './components/Footer';
 function App() {
   return (
     <div className="App">
@@ -19,6 +20,8 @@ function App() {
        <Route path="/id/:_id" element={<Place/>}>
        </Route>
      </Routes>
+
+     <Footer/>
      
     </div>
   );
