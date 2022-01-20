@@ -90,7 +90,7 @@ const lastline1 = "English (IN)  ₹ INR"
 
          <div>
              <h3 className="text-sm font-bold mt-5 mb-5">About</h3>
-           {footer_d4.map((e) => <h4 className="text-xs mt-2 mb-2 opacity-95">{e}</h4>)}
+           {footer_d4.map((e) => <h4 key={e} className="text-xs mt-2 mb-2 opacity-95">{e}</h4>)}
 
          </div>
 
