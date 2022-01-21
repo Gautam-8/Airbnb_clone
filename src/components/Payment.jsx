@@ -1,6 +1,9 @@
 import axios from "axios"
 import { useEffect, useState } from 'react'
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
+import { pp_Loading } from "../reducers/reducer/action";
 
 export const Payment = () => {
 
@@ -12,12 +15,14 @@ export const Payment = () => {
     //console.log(id,day);
 
     const [temp,setTemp] = useState('');
-
+    const dispatch = useDispatch();
+    const loading = useSelector((state) => state.p_Loading);
+   
 
      const paymentData = () => {
 
         axios.get(`https://airbnb-fw12.herokuapp.com/hotel/${id}`)
-        .then((res) => {console.log(res.data)  ; setTemp(res.data)})
+        .then((res) => { setTemp(res.data); dispatch(pp_Loading()) })
         .catch((err) => console.log(err))
     }
 
@@ -34,6 +39,35 @@ export const Payment = () => {
 
        const Cancellation = 'Free cancellation before the day of checkout. get a full refund, minus the first night and service fee.'
        const covid = 'Our Extenuating Circumstances policy does not cover travel disruptions caused by COVID-19';
+
+       const [form ,setForm] = useState({});
+
+       const handleChange = (e) => {
+
+        let { value , name } = e.target;
+          setForm({
+              ...form,
+              [name] : value
+          });
+   
+       }
+
+       const handleClick = () => {
+        
+        console.log(form)
+
+       }
+
+       if(loading === true) {
+           return (
+               <div>
+                   <div className="h-20"></div>
+               <h1>loading...</h1>
+
+               </div>
+            
+           )
+       }
 
     return (
 
@@ -56,25 +90,25 @@ export const Payment = () => {
 
             <h4 className="mt-5">Card</h4>
 
-            <input placeholder="Enter Card Number" className="rounded-lg  mt-2 w-8/12 h-10 text-xs border-2 border-gray-300 border-solid text-center"/>
+            <input onChange={handleChange} name="cardNumber" type='number' placeholder="Enter Card Number" className="rounded-lg  mt-2 w-8/12 h-10 text-xs border-2 border-gray-300 border-solid text-center"/>
 
             <div className="flex">
              
              <div>
              <h4 className="mt-5">Expiry</h4>
-             <input placeholder="MM/YY" className="rounded-lg mt-2 w-12/12 h-10 text-xs border-2 border-gray-300 border-solid text-center"/>
+             <input onChange={handleChange} name='expiry' placeholder="MM/YY" className="rounded-lg mt-2 w-12/12 h-10 text-xs border-2 border-gray-300 border-solid text-center"/>
              </div>
           
              <div className="ml-4">
              <h4 className="mt-5">CVV</h4>
-             <input placeholder="Enter CVV" className="rounded-lg mt-2 w-12/12 h-10 text-xs border-2 border-gray-300 border-solid text-center"/> 
+             <input onChange={handleChange} name='cvv' type='number' placeholder="Enter CVV" className="rounded-lg mt-2 w-12/12 h-10 text-xs border-2 border-gray-300 border-solid text-center"/> 
              </div>
 
             </div> 
 
-            <h4 className="mt-5">Name on Card</h4>
+            <h4  className="mt-5">Name on Card</h4>
 
-           <input placeholder="Enter name as on card" className="rounded-lg mt-2 w-8/12 h-10 text-xs border-2 border-gray-300 border-solid text-center"/>
+           <input onChange={handleChange} name='name' placeholder="Enter name as on card" className="rounded-lg mt-2 w-8/12 h-10 text-xs border-2 border-gray-300 border-solid text-center"/>
 
            <hr className="border-1 border-gray-300 mt-10 mb-5" />
        
@@ -90,7 +124,7 @@ export const Payment = () => {
 
          <p className=" text-xs">By selecting the button below, I agree to the Host's House Rules, Airbnb's COVID-19 Safety Requirements and the Guest Refund Policy.</p>
            
-           <button className="p-2 px-3 text-sm rounded-md text-center mt-5 bg-red-600 text-white">Confirm and pay</button>
+           <button onClick={handleClick} className="p-2 px-3 text-sm rounded-md text-center mt-5 bg-red-600 text-white">Confirm and pay</button>
 
        </div>
 
