@@ -1,59 +1,44 @@
 import axios from "axios"
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useParams } from "react-router-dom";
 
 export const Payment = () => {
-    const {day,_id}=useParams();
-    console.log(_id,day)
-// const paymentData = () => {
 
-//         let id = '61e7f961b308ed322fe640df';
+    let {day,_id}=useParams();
+    let id = _id.split('');
+    id.shift('');
+    id=id.join('');
+    day = Number(day);
+    //console.log(id,day);
 
-//         axios.get(`https://airbnb-fw12.herokuapp.com/hotel/${id}`)
-//         .then((res) => console.log(res.data));
-//     }
+    const [temp,setTemp] = useState('');
 
-//     useEffect(() => {
-//         paymentData();
-//     } , [])
-const lastline = "© 2022 Airbnb, Inc.·Privacy·Terms·Sitemap·Company details";
-const lastline1 = "English (IN)  ₹ INR";
-const socialLogo = ['https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-social-facebook-128.png',
-'https://cdn3.iconfinder.com/data/icons/picons-social/57/03-twitter-128.png',
-'https://cdn3.iconfinder.com/data/icons/picons-social/57/78-instagram-128.png']
 
-const temp = {
-    "_id": "61e7f961b308ed322fe640df",
-    "id": 4,
-    "title": "Comfortable ensuite room in Penthouse, Bandra West",
-    "image1": "https://a0.muscache.com/im/pictures/d3a335e3-7814-4ed6-96d7-34efd06c72f0.jpg?im_w=960",
-    "image2": "https://a0.muscache.com/im/pictures/60841228-912f-4efa-9242-45a4b9741b24.jpg?im_w=720",
-    "image3": "https://a0.muscache.com/im/pictures/36cddef9-d829-48f4-bc3a-baa8309015e2.jpg?im_w=1200",
-    "image4": "https://a0.muscache.com/im/pictures/16a98b96-32d9-4e1b-b271-1f5b9395e133.jpg?im_w=1200",
-    "image5": "https://a0.muscache.com/im/pictures/d5526394-7ceb-4f0c-9948-6fd34fa71a46.jpg?im_w=720",
-    "bathroom_image": "https://a0.muscache.com/im/pictures/0b02f4a5-e35e-411b-978e-73812a08dad1.jpg?im_w=720",
-    "bedroom_image": "https://a0.muscache.com/im/pictures/09c83867-c364-41fb-be65-17a5c830d84a.jpg?im_w=720",
-    "host_name": "Aftab & Nazia",
-    "ratings": 4.88,
-    "reviews": "165 reviews",
-    "location": "West Mumbai, Maharashtra, India",
-    "city": "Mumbai",
-    "state": "Maharashtra",
-    "price": 2530,
-    "discounted_price": 2339,
-    "about": "Decorated with simple white interior and furniture. Clean and neat room. Small but comfortable bath area with all the basics in place. Big window and open view of outside. Sufficient sunlight and well lit at night. Basic provision for tea coffee available. Clean Towels provided. Fresh sheets and bedding done. You will enjoy your stay here with nice local breakfast of poha by host staying next door.",
-    "guest_size": 3,
-    "bedroom_size": 1,
-    "bed_size": 1,
-    "bathroom_size": 1
-}
+     const paymentData = () => {
 
-const Cancellation = 'Free cancellation before the day of checkout. get a full refund, minus the first night and service fee.'
-const covid = 'Our Extenuating Circumstances policy does not cover travel disruptions caused by COVID-19';
+        axios.get(`https://airbnb-fw12.herokuapp.com/hotel/${id}`)
+        .then((res) => {console.log(res.data)  ; setTemp(res.data)})
+        .catch((err) => console.log(err))
+    }
+
+    useEffect(() => {
+        paymentData();
+    } , [])
+
+       const lastline = "© 2022 Airbnb, Inc.·Privacy·Terms·Sitemap·Company details";
+       const lastline1 = "English (IN)  ₹ INR";
+       const socialLogo = ['https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-social-facebook-128.png',
+                                 'https://cdn3.iconfinder.com/data/icons/picons-social/57/03-twitter-128.png',
+                                'https://cdn3.iconfinder.com/data/icons/picons-social/57/78-instagram-128.png']
+
+
+       const Cancellation = 'Free cancellation before the day of checkout. get a full refund, minus the first night and service fee.'
+       const covid = 'Our Extenuating Circumstances policy does not cover travel disruptions caused by COVID-19';
 
     return (
 
         <>
+    
          <div className="h-20"></div>
 
          <div className="w-9/12 m-auto flex mt-10">
@@ -63,11 +48,11 @@ const covid = 'Our Extenuating Circumstances policy does not cover travel disrup
             <h3 className="text-lg font-semibold mt-5">Your trip</h3>
 
             <div>
-                <h4 className="text-sm">Dates</h4>
+                <h4 className="text-sm">Stay : {day} { day === 1 ? 'night' : "nights"}</h4>
             </div>
             <hr className="border-1 border-gray-300 mt-10 mb-5" />
 
-            <h3 className="text-lg font-semibold">Pay with <h4 className="text-sm">CARDS (CREDIT/DEBIT)</h4></h3>
+            <div className="text-lg font-semibold">Pay with <h4 className="text-sm">CARDS (CREDIT/DEBIT)</h4></div>
 
             <h4 className="mt-5">Card</h4>
 
@@ -119,32 +104,35 @@ const covid = 'Our Extenuating Circumstances policy does not cover travel disrup
            <img src={temp.image1} className="w-3/12 h-20 rounded" alt=""/>
            <div className="text-xs ml-2">
            <p className="mt-1">{temp.title}</p>
-            <p className="mt-4 flex"><p className="mr-2 font-semibold" >{temp.ratings}</p> ({temp.reviews})</p>
+            <div className="mt-4 flex">
+                <p className="mr-2 font-semibold" >
+                <ion-icon name="star"></ion-icon>
+                {temp.ratings}</p> ({temp.reviews})</div>
            </div>
   
        </div>
 
        <hr className="border-1 border-gray-300 w-11/12 m-auto" />
 
-       <div className="w-12/12 p-4">
+       <div className="w-12/12 p-4 tracking-wide">
        <h3 className="text-lg font-semibold mb-3">Price details</h3>
 
-       <h4 className="flex justify-between mt-1">
-            <p className="text-xs">Discounted price</p> <p className="text-sm">₹ {temp.price}</p>
-      </h4>
+       <div className="flex justify-between mt-1">
+            <p className="text-xs">{'₹'+ temp.price } x { day + (day === 1 ? "night" : 'nights')}</p> <p className="text-sm">₹ {temp.price * day}</p>
+      </div>
 
-       <h4 className="flex justify-between mt-1"> 
-       <p className="text-xs">Service fee</p> <p className="text-sm">₹ {Math.round(temp.price * .12)}</p>
-       </h4>
+       <div className="flex justify-between mt-1"> 
+       <p className="text-xs">Service fee</p> <p className="text-sm">₹ {Math.round(temp.price * .12 * day)}</p>
+       </div>
 
-       <h4 className="flex justify-between mt-1"> <p className="text-xs">Occupancy taxes and fees</p>
-        <p className="text-sm">₹ {Math.round(temp.price * .1)}</p>
-        </h4>
+       <div className="flex justify-between mt-1"> <p className="text-xs">Occupancy taxes and fees</p>
+        <p className="text-sm">₹ {Math.round(temp.price * .1 * day)}</p>
+        </div>
 
-       <h4 className="flex justify-between mt-1"> 
+       <div className="flex justify-between mt-1"> 
        <p className="text-xs font-semibold">Total (INR)</p> 
-       <p className="text-sm font-bold">₹ {Math.round(temp.price * .1 + temp.price * .12 + temp.price) }</p>
-       </h4>
+       <p className="text-sm font-bold">₹ {Math.round(temp.price * .1 + temp.price * .12 + temp.price * day) }</p>
+       </div>
 
        </div>
 
@@ -175,9 +163,7 @@ const covid = 'Our Extenuating Circumstances policy does not cover travel disrup
 
 </div>
 
-        </>
+   </>
     
     )
-   
-
 }
