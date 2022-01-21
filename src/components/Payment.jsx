@@ -46,7 +46,7 @@ const temp = {
     "bathroom_size": 1
 }
 
-const Cancellation = 'Free cancellation before 2:00 pm on 9 Feb. After that, cancel before 2:00 pm on 10 Feb and get a full refund, minus the first night and service fee.'
+const Cancellation = 'Free cancellation before the day of checkout. get a full refund, minus the first night and service fee.'
 const covid = 'Our Extenuating Circumstances policy does not cover travel disruptions caused by COVID-19';
 
     return (
