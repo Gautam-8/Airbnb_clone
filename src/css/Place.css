@@ -53,3 +53,40 @@ width:300px;
     width: 300px;
     border-radius: 50px;
 }
+.dates{
+    display: flex;
+    justify-content: space-around;
+}
+.dates > input{
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+.dates > input:focus{
+    outline: none;
+}
+.dates >p{
+    font-size: 12px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+#proceed > div > select{
+    width: 98%;
+    border: none;
+    margin-left: 2%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+#proceed > div > select:focus{
+    outline: none;  
+}
+
+#proceed{
+    border: 1px solid black;
+    border-radius: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-shadow: 4px 3px 8px 1px #969696;
+    -webkit-box-shadow: 4px 3px 8px 1px #969696;
+}

@@ -9,7 +9,7 @@ export const  Place=()=>{
     console.log(_id);
     let [start,setStart]=useState(0);
     let [end,setEnd]=useState(0);
-    let [price,setPrice]=useState(0);
+    let [price,setPrice]=useState(1);
     useEffect(()=>{
         getData();
     },[]);
@@ -83,9 +83,29 @@ export const  Place=()=>{
                 <br />
             
                 </div>
-                <div >
-               <input type="date" />
-               <input type="date" />
+                <div id="proceed" >
+                    <h2> <strong>₹{data.price}</strong> /night</h2>
+                    <br />
+                    <div style={{border:"1px solid #969696",borderRadius:"10px"}}>
+                      
+                    <div className="dates">
+                        <p>Check-in</p>
+                       
+                        <p>Check-out</p>
+                        </div>
+                        <hr />
+               <div className="dates"> 
+               
+                <input type="date" />
+                     
+               <input type="date" /></div>
+               <hr />
+               <select name="Guest" id="">Select Guest
+                       <option value="1">1 Guest</option>
+                       <option value="2">2 Guests</option>
+                   </select>
+                    </div>
+              <button>{price?"CHECK AVAILABILITY":(<Link to={`/payment`} >PROCEED</Link>)}</button>
                 </div>
                 </div>
                 <br />
