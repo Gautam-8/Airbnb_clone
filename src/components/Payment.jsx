@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { pp_Loading } from "../reducers/reducer/action";
+import loading_gif from "../images/spinning-loading.gif"
 
 export const Payment = () => {
 
@@ -62,7 +63,8 @@ export const Payment = () => {
            return (
                <div>
                    <div className="h-20"></div>
-               <h1>loading...</h1>
+               
+            <img className="m-auto" src={loading_gif} alt="loading"/>
 
                </div>
             
