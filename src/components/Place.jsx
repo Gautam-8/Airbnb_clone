@@ -145,17 +145,37 @@ if(end && start){
             <br />
             <hr />
             <br />
-            <div className="instruction">
+            <div className="bedroom">
+                <div>
                 <h1 style={{ marginLeft: "100px"}}>  <strong>Where you'll sleep</strong>  </h1>
                 <br />
                 <img src={data.bedroom_image} alt="" />
 
                 <h5 style={{ marginLeft: "100px", marginTop: "10px", textDecoration: "none" }}><strong>Bedroom</strong> </h5>
+    
+                </div>
+                <div className="bedroom-ptag">
+                   
+                    <div>
+                    <h1><strong>What this place offers</strong></h1>
+                        <h3><ion-icon name="wifi-outline"></ion-icon> Wifi</h3>
+                        <h3><ion-icon name="bonfire-outline"></ion-icon> Dryer</h3>
+                        <h3><ion-icon name="flower-outline"></ion-icon> Garden </h3>
+                        <h3><ion-icon name="book-outline"></ion-icon> Children’s books </h3>
+                        <h3><ion-icon name="logo-no-smoking"></ion-icon> No smoking</h3>
+                    </div>
+                    <div>
+                        <br></br>
+                        <h3><ion-icon name="car-outline"></ion-icon> Parking on-street </h3>
+                        <h3><ion-icon name="medkit-outline"></ion-icon> First Aid Kit</h3>
+                        <h3><ion-icon name="thermometer-outline"></ion-icon> Thermometer</h3>
+                        <h3><ion-icon name="shirt-outline"></ion-icon> One T-Shirt</h3>
+                        <h3><ion-icon name="notifications-off-circle-outline"></ion-icon> Alarm is Prohabited</h3>
+                    </div>
+                    </div>        
             </div>
         </div>
-        <br />
-        <br />
-        <br />
+        
     </div>)
 }
 
