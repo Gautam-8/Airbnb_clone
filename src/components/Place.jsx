@@ -7,7 +7,9 @@ export const  Place=()=>{
     const [data,setData]=useState({});
     let {_id}=useParams();
     console.log(_id);
-    
+    let [start,setStart]=useState(0);
+    let [end,setEnd]=useState(0);
+    let [price,setPrice]=useState(0);
     useEffect(()=>{
         getData();
     },[]);
@@ -19,6 +21,7 @@ export const  Place=()=>{
                })
                 setData(tempData2[0]);
                 console.log(tempData2[0])
+                setPrice(data.price);
 
             }
     return (<div  >
@@ -78,19 +81,27 @@ export const  Place=()=>{
                 </p>
                 </div>
                 <br />
-                <hr />
+            
                 </div>
-                <div ><h1>hi</h1>
-               
+                <div >
+               <input type="date" />
+               <input type="date" />
                 </div>
                 </div>
                 <br />
                 <hr />
+                <br />
                 <div className="instruction">
                 <h1 style={{marginLeft:"100px"}}>  <strong>Where you'll sleep</strong>  </h1>
+                <br />
                 <img src={data.bedroom_image} alt="" />
+             
+                <h5 style={{marginLeft:"100px", marginTop:"10px", textDecoration :"none"}}><strong>Bedroom</strong> </h5>
             </div>
               
-        </div>           
+        </div>   
+        <br />        
+        <br />        
+        <br />        
     </div>)
 }
