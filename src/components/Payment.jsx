@@ -2,11 +2,14 @@ import axios from "axios"
 import { useEffect, useState } from 'react'
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { pp_Loading } from "../reducers/reducer/action";
 import loading_gif from "../images/spinning-loading.gif"
+import { data } from "autoprefixer";
 
 export const Payment = () => {
+
+    const navigate = useNavigate();
 
     let {day,_id}=useParams();
     let id = _id.split('');
@@ -80,7 +83,7 @@ export const Payment = () => {
          <div className="w-9/12 m-auto flex mt-10">
 
          <div className="w-6/12">
-            <h1 className="text-2xl font-semibold" >Confirm and pay</h1>
+            <h1 className="text-2xl font-semibold ml-0" > {<i className="mr-10 cursor-pointer" onClick={() => navigate(-1)}>{'<'}</i>} Confirm and pay</h1>
             <h3 className="text-lg font-semibold mt-5">Your trip</h3>
 
             <div>
