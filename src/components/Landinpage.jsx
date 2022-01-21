@@ -11,6 +11,7 @@ export const Landingpage = () => {
 
 ]
 
+const navigate = useNavigate();
  return (
 
     <div>
@@ -20,7 +21,7 @@ export const Landingpage = () => {
                 <div className="text-center mt-96">
 
                 <h1 className="text-4xl text-white mb-4">Not sure where to go? Perfect.</h1>
-          <button className="text-violet-800 text-sm text-bold py-3 bg-white px-5 rounded-full mt-1" > I'm flexible</button>
+          <button onClick={() => navigate('/payment')} className="text-violet-800 text-sm text-bold py-3 bg-white px-5 rounded-full mt-1" > I'm flexible</button>
 
                 </div>
                
