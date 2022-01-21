@@ -1,8 +1,10 @@
 import axios from "axios"
 import { useEffect } from 'react'
+import { useParams } from "react-router-dom";
 
 export const Payment = () => {
-
+    const {day,_id}=useParams();
+    console.log(_id,day)
 // const paymentData = () => {
 
 //         let id = '61e7f961b308ed322fe640df';

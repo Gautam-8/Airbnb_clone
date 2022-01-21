@@ -125,7 +125,7 @@ if(end && start){
                             <option value="2">2 Guests</option>
                         </select>
                     </div>
-                    <button>{day ? day<0?"Select a valid Date":<Link to={`/payment`} >RESERVE</Link>:("Select Date Range") }</button>
+                    <button>{day ? day<0?"Select a valid Date":<Link to={`/payment/${_id}/${day}`} >RESERVE</Link>:("Select Date Range") }</button>
                     <p style={{ color: "#969696" }}>You won't be charged yet</p>
                    {day>0?<div> <div className="prices" >
                         <p>₹{data.price} x {day}nights </p>

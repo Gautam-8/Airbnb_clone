@@ -21,7 +21,7 @@ function App() {
        </Route>
        <Route path="/id/:_id" element={<Place/>}>
        </Route>
-       <Route path="/payment" element={<Payment/>}>
+       <Route path="/payment/:_id/:day" element={<Payment/>}>
        </Route>
      </Routes>
 
