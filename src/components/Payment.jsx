@@ -75,12 +75,12 @@ const covid = 'Our Extenuating Circumstances policy does not cover travel disrup
              
              <div>
              <h4 className="mt-5">Expiry</h4>
-             <input placeholder="MM/YY" className="mt-2 w-10/12 h-10 text-xs border-2 border-gray-300 border-solid text-center"/>
+             <input placeholder="MM/YY" className="mt-2 w-12/12 h-10 text-xs border-2 border-gray-300 border-solid text-center"/>
              </div>
           
              <div className="ml-4">
              <h4 className="mt-5">CVV</h4>
-             <input placeholder="Enter CVV" className="mt-2 w-10/12 h-10 text-xs border-2 border-gray-300 border-solid text-center"/> 
+             <input placeholder="Enter CVV" className="mt-2 w-12/12 h-10 text-xs border-2 border-gray-300 border-solid text-center"/> 
              </div>
 
             </div> 
@@ -127,10 +127,23 @@ const covid = 'Our Extenuating Circumstances policy does not cover travel disrup
        <div className="w-12/12 p-4">
        <h3 className="text-lg font-semibold mb-3">Price details</h3>
 
-       <h4 className="flex justify-between mt-1"> <p className="text-xs">Discounted price</p> <p className="text-sm">₹ {temp.price}</p></h4>
-       <h4 className="flex justify-between mt-1"> <p className="text-xs">Service fee</p> <p className="text-sm">₹ {Math.round(temp.price * .12)}</p></h4>
-       <h4 className="flex justify-between mt-1"> <p className="text-xs">Occupancy taxes and fees</p> <p className="text-sm">₹ {Math.round(temp.price * .1)}</p></h4>
-       <h4 className="flex justify-between mt-1"> <p className="text-xs font-semibold">Total (INR)</p> <p className="text-sm font-bold">₹ {Math.round(temp.price * .1 + temp.price * .12 + temp.price) }</p></h4>
+       <h4 className="flex justify-between mt-1">
+            <p className="text-xs">Discounted price</p> <p className="text-sm">₹ {temp.price}</p>
+      </h4>
+
+       <h4 className="flex justify-between mt-1"> 
+       <p className="text-xs">Service fee</p> <p className="text-sm">₹ {Math.round(temp.price * .12)}</p>
+       </h4>
+
+       <h4 className="flex justify-between mt-1"> <p className="text-xs">Occupancy taxes and fees</p>
+        <p className="text-sm">₹ {Math.round(temp.price * .1)}</p>
+        </h4>
+
+       <h4 className="flex justify-between mt-1"> 
+       <p className="text-xs font-semibold">Total (INR)</p> 
+       <p className="text-sm font-bold">₹ {Math.round(temp.price * .1 + temp.price * .12 + temp.price) }</p>
+       </h4>
+
        </div>
 
        </div>
