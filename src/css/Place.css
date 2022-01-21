@@ -81,7 +81,7 @@ width:300px;
 }
 
 #proceed{
-    border: 1px solid black;
+    border: 1px solid #969696;
     border-radius: 30px;
     padding-top: 30px;
     padding-bottom: 30px;
@@ -89,4 +89,36 @@ width:300px;
     padding-right: 10px;
     box-shadow: 4px 3px 8px 1px #969696;
     -webkit-box-shadow: 4px 3px 8px 1px #969696;
+}
+#proceed > button{
+    background-color: #D22779;
+    width: 96%;
+    border: none;
+    margin-left: 2%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding: 10px;
+    border-radius: 30px;
+    color: white;
+}
+#proceed >p{
+    text-align: center;
+}
+.prices{
+    display: flex;
+    justify-content: space-between;
+}
+.prices > p{
+    margin: 10px;
+    line-height: 15px;
+    color: #969696;
+    font-size: 15px;
+}
+.prices > p:nth-child(1){
+    text-decoration: underline;
+}
+.prices >h2{
+    line-height: 17px;
+    margin: 10px;
+
 }
