@@ -35,3 +35,7 @@
     transform: rotate(360deg);
   }
 } 
+
+ion-icon{
+  color: #FF6363;
+}
