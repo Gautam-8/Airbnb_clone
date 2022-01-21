@@ -1,6 +1,7 @@
 import "../css/Landingpage.css";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import {Footer} from "./Footer"
 
 export const Landingpage = () => {
 
@@ -71,6 +72,8 @@ const navigate = useNavigate();
  </div>
 
  {/* footer */}
+
+ <Footer />
 
   
     </div>
