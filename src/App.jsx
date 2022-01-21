@@ -5,7 +5,8 @@ import { Route,Routes } from 'react-router-dom';
 import { Landingpage } from './components/Landinpage';
 import { City } from './components/City';
 import { Place } from './components/Place';
-import { Footer } from './components/Footer';
+
+import { Payment } from './components/Payment';
 function App() {
   return (
     <div className="App">
@@ -20,9 +21,11 @@ function App() {
        </Route>
        <Route path="/id/:_id" element={<Place/>}>
        </Route>
+       <Route path="/payment" element={<Payment/>}>
+       </Route>
      </Routes>
 
-     <Footer/>
+    
      
     </div>
   );
