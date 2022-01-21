@@ -71,25 +71,25 @@ const covid = 'Our Extenuating Circumstances policy does not cover travel disrup
 
             <h4 className="mt-5">Card</h4>
 
-            <input placeholder="Enter Card Number" className="mt-2 w-8/12 h-10 text-xs border-2 border-gray-300 border-solid text-center"/>
+            <input placeholder="Enter Card Number" className="rounded-lg  mt-2 w-8/12 h-10 text-xs border-2 border-gray-300 border-solid text-center"/>
 
             <div className="flex">
              
              <div>
              <h4 className="mt-5">Expiry</h4>
-             <input placeholder="MM/YY" className="mt-2 w-12/12 h-10 text-xs border-2 border-gray-300 border-solid text-center"/>
+             <input placeholder="MM/YY" className="rounded-lg mt-2 w-12/12 h-10 text-xs border-2 border-gray-300 border-solid text-center"/>
              </div>
           
              <div className="ml-4">
              <h4 className="mt-5">CVV</h4>
-             <input placeholder="Enter CVV" className="mt-2 w-12/12 h-10 text-xs border-2 border-gray-300 border-solid text-center"/> 
+             <input placeholder="Enter CVV" className="rounded-lg mt-2 w-12/12 h-10 text-xs border-2 border-gray-300 border-solid text-center"/> 
              </div>
 
             </div> 
 
             <h4 className="mt-5">Name on Card</h4>
 
-           <input placeholder="Enter name as on card" className="mt-2 w-8/12 h-10 text-xs border-2 border-gray-300 border-solid text-center"/>
+           <input placeholder="Enter name as on card" className="rounded-lg mt-2 w-8/12 h-10 text-xs border-2 border-gray-300 border-solid text-center"/>
 
            <hr className="border-1 border-gray-300 mt-10 mb-5" />
        
