@@ -1,1 +1,3 @@
 export const DATA="DATA";
+
+export const PAYMENTPAGE_LOADING = 'PAYMENTPAGE_LOADING';
