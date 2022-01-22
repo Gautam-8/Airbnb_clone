@@ -79,7 +79,7 @@ export const Payment = () => {
         if(!verify.includes('/')){console.log(4) ; dispatch(payment_Error()) ; return ;}
 
         dispatch(payment_Success());
-        navigate('/')
+       navigate('/')
        }
 
        if(loading === true || payReq === true) {
@@ -93,6 +93,8 @@ export const Payment = () => {
             
            )
        }
+
+    
 
     return (
 
