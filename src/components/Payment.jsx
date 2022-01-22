@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { payment_Error, payment_Req, payment_Success, pp_Loading } from "../reducers/reducer/action";
 import loading_gif from "../images/spinning-loading.gif"
-import { data } from "autoprefixer";
+
 
 export const Payment = () => {
 
@@ -79,7 +79,7 @@ export const Payment = () => {
         if(!verify.includes('/')){console.log(4) ; dispatch(payment_Error()) ; return ;}
 
         dispatch(payment_Success());
-       navigate('/')
+       navigate(`/order/${id}`)
        }
 
        if(loading === true || payReq === true) {
