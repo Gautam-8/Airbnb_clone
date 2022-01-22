@@ -10,9 +10,8 @@ export const Order = () => {
     const lastline = "© 2022 Airbnb, Inc.·Privacy·Terms·Sitemap·Company details";
     const lastline1 = "English (IN)  ₹ INR";
     const socialLogo = ['https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-social-facebook-128.png',
-                              'https://cdn3.iconfinder.com/data/icons/picons-social/57/03-twitter-128.png',
-                             'https://cdn3.iconfinder.com/data/icons/picons-social/57/78-instagram-128.png']
-                             
+  'https://cdn3.iconfinder.com/data/icons/picons-social/57/03-twitter-128.png',
+  'https://cdn3.iconfinder.com/data/icons/picons-social/57/78-instagram-128.png']
     let {Oid}=useParams();
     const [thank , setThank] = useState({});
 

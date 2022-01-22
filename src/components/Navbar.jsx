@@ -105,6 +105,8 @@ setLocalData(temp);
                },2000)
              })}>
            <p onClick={(e)=>{
+             if(loadData("token")==null)
+             saveData("token","")
              if(loadData("token")){
                saveData("token", "");
                setLocalData("");
@@ -112,7 +114,10 @@ setLocalData(temp);
               setLocalData(loadData("token"));
              return  navigate("/login");
              }
-           }}>{localData.userName?"Logout":"Login"} </p>
+           }}>{localData.username?"Logout":"Login"} </p>
+           <p onClick={()=>{
+             navigate("/signup")
+           }}> {localData.username!=null?"":"SignUp"}</p>
            <p>WishList </p>
            <p onClick={() => navigate('/trips')}>Trips</p>
          </div>

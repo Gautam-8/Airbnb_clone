@@ -1,4 +1,3 @@
-
 import './App.css';
 import { Navbar } from './components/Navbar';
 import { Route,Routes } from 'react-router-dom';
@@ -9,14 +8,12 @@ import { Login } from './components/Login';
 import { Payment } from './components/Payment';
 import { Order } from './components/Orderconfirm';
 import { Trips } from './components/Trips';
+import {SignUp} from "./components/SignUp";
 function App() {
   return (
     <div className="App">
-
      <Navbar/>
-
      <Routes>
-     
        <Route path="/" element={<Landingpage />}>
        </Route>
        <Route path="/city/:city" element={<City/>}>
@@ -31,10 +28,11 @@ function App() {
        </Route>
        <Route path="/trips" element={<Trips/>}>
        </Route>
+       <Route path="/login" element={<Login/>}>
+       </Route>
+       <Route path="/signup" element={<SignUp/>}>
+       </Route>
      </Routes>
-
-    
-     
     </div>
   );
 }
