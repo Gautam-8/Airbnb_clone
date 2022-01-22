@@ -1,6 +1,6 @@
 
-import { DATA, PAYMENTPAGE_LOADING, PAYMENT_ERROR, PAYMENT_REQ, PAYMENT_SUCCESS } from "./actionTypes";
-let init={data:[] , p_Loading:true , payReq:false , paySuccess:false , payError:false };
+import { DATA, ORDER, PAYMENTPAGE_LOADING, PAYMENT_ERROR, PAYMENT_REQ, PAYMENT_SUCCESS } from "./actionTypes";
+let init={data:[] , p_Loading:true , payReq:false , paySuccess:false , payError:false , order : true };
 export const reducer=(state=init,{type,payload})=>{
     switch(type){
         case DATA:
@@ -30,6 +30,11 @@ export const reducer=(state=init,{type,payload})=>{
                         ...state,
                         payReq : false,
                         payError : true,
+                    }
+                    case ORDER : 
+                    return{
+                        ...state,
+                          order:false
                     }
 
                 default :
