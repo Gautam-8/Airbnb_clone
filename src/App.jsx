@@ -8,6 +8,7 @@ import { Place } from './components/Place';
 import { Login } from './components/Login';
 import { Payment } from './components/Payment';
 import { Order } from './components/Orderconfirm';
+import { Trips } from './components/Trips';
 function App() {
   return (
     <div className="App">
@@ -27,6 +28,8 @@ function App() {
        <Route path="/login" element={<Login/>}>
        </Route>
        <Route path="/order/:Oid" element={<Order/>}>
+       </Route>
+       <Route path="/trips" element={<Trips/>}>
        </Route>
      </Routes>
 
