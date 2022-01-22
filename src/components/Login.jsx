@@ -1,8 +1,10 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom";
 export const Login=()=>{
     let [userName,setUserName]=useState("");
     let [password,setPassword]=useState("");
     let [admin,setAdmin]=useState(false);
+    let navigate=  useNavigate();
     return (<div>
         <br />
         <br />
@@ -28,6 +30,7 @@ export const Login=()=>{
                 admin
             }
             localStorage.setItem("token",JSON.stringify(form));
+            navigate("/");
         }} >Login</button>
     </div>)
 }

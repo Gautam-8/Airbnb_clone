@@ -13,12 +13,17 @@ export const Navbar = () => {
   let [debounceArr,serDebounceArr]=useState([]);
   let [searchText,setSearchText]=useState("");
   let [dropEffect,setDropEffect]=useState(false);
-  let [localData,setLocalData]=useState({});
+  let [localData,setLocalData]=useState("");
   useEffect(()=>{
   let temp=loadData("token");
 setLocalData(temp);
     
   },[])
+  useEffect(()=>{
+    let temp=loadData("token");
+  setLocalData(temp);
+      
+    },[localData])
   let timerId;
       return(
 <>
@@ -26,7 +31,10 @@ setLocalData(temp);
 
         <div className="p-4 flex justify-around border-b-2 border-solid  border-violet-50">
 
-             <Link to={'/'}> <img src={airbnb} className="w-20 h-6 mr-20px" alt=""/></Link>
+             <Link to={'/'} onClick={()=>{
+               
+                 setLocalData(loadData("token"));
+             }}> <img src={airbnb} className="w-20 h-6 mr-20px" alt=""/></Link>
         
          <div className="flex w-7/12 justify-evenly">
            <div className="flex w-4/12 justify-center border-grey-100 border-2 border-solid rounded-full ">
@@ -91,20 +99,22 @@ setLocalData(temp);
              </div>
 
              <div id="drop-down" onClick={(()=>{
+               
                setTimeout(()=>{
                document.getElementById("drop-down").style.display="none"
                },2000)
              })}>
            <p onClick={(e)=>{
-             console.log(e.target.textContent);
-             if(e.target.textContent=="Logout"){
-               saveData("token","");
+             if(loadData("token")){
+               saveData("token", "");
+               setLocalData("");
              }else{
+              setLocalData(loadData("token"));
              return  navigate("/login");
              }
-           }}>{localData.token?"Logout":"Login"} </p>
+           }}>{localData.userName?"Logout":"Login"} </p>
            <p>WishList </p>
-           <p> Trips</p>
+           <p>Trips</p>
          </div>
        <div className="flex items-center">
     
@@ -120,6 +130,8 @@ setLocalData(temp);
        alt=""/>
         <img 
          onClick={()=>{
+          setLocalData(loadData("token"));
+          console.log(localData);
           setDropEffect((prev)=>!prev);
           console.log(dropEffect);
           if(dropEffect){
