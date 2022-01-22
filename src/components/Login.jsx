@@ -50,7 +50,7 @@ export const Login=()=>{
         let currentusername=res.username;
         console.log(currentusername);
         localStorage.setItem("token",JSON.stringify(currentusername));
-        navigate("/")
+        navigate(-1)
     })
     .catch((e)=>{
         console.log(e);
