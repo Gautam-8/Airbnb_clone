@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "../css/Place.css"
-
+import { Footer } from "./Footer";
 export const Place = () => {
 
     const [data, setData] = useState({});
@@ -13,23 +13,22 @@ export const Place = () => {
     useEffect(() => {
         getData();
     }, []);
-    useEffect(()=>{
-if(end && start){
-    let date1=start.split("-");
-                                    let date2=end.split("-");
-                                   let  tempdate3=""+date1[1]+"/"+date1[2]+"/"+date1[0];
-                                   console.log(tempdate3);
-                                    let dt1=new Date(tempdate3);
-                                    tempdate3=""+date2[1]+"/"+date2[2]+"/"+date2[0];
-                                    let dt2=new Date(tempdate3);
-                                    console.log(tempdate3);
-                                    let  dif=Number(dt2.getTime())-Number(dt1.getTime());
-                                    let tempdays=(dif)/(1000*3600*24)
-                                    setDay(tempdays);
-                                    console.log(day)
-
-}
-    },[end,start])
+    useEffect(() => {
+        if (end && start) {
+            let date1 = start.split("-");
+            let date2 = end.split("-");
+            let tempdate3 = "" + date1[1] + "/" + date1[2] + "/" + date1[0];
+            console.log(tempdate3);
+            let dt1 = new Date(tempdate3);
+            tempdate3 = "" + date2[1] + "/" + date2[2] + "/" + date2[0];
+            let dt2 = new Date(tempdate3);
+            console.log(tempdate3);
+            let dif = Number(dt2.getTime()) - Number(dt1.getTime());
+            let tempdays = (dif) / (1000 * 3600 * 24)
+            setDay(tempdays);
+            console.log(day);
+        }
+    }, [end, start])
     async function getData() {
         let tempData = await fetch(`https://airbnb-fw12.herokuapp.com/hotel/`)
             .then((tempData) => tempData.json())
@@ -45,7 +44,7 @@ if(end && start){
             <br />
             <br />
             {<h1> <strong>Standard Private room | {data.city} |</strong> </h1>}
-            {<h5>Standard Private room | {data.city} | </h5>}
+            {<h5>Standard Private room | {data.location} | </h5>}
             <div id="five-images">
                 <div >    <img src={data.image1} alt="" /></div>
                 <div >
@@ -113,11 +112,11 @@ if(end && start){
 
                             <input type="date" onChange={(e) => {
                                 setStart(e.target.value)
-                               
+
                             }} />
                             <input type="date" onChange={(e) => {
                                 setEnd(e.target.value)
-                              
+
                             }} /></div>
                         <hr />
                         <select name="Guest" id="">Select Guest
@@ -125,21 +124,21 @@ if(end && start){
                             <option value="2">2 Guests</option>
                         </select>
                     </div>
-                    <button>{day ? day<0?"Select a valid Date":<Link to={`/payment/${_id}/${day}`} >RESERVE</Link>:("Select Date Range") }</button>
+                    <button>{day ? day < 0 ? "Select a valid Date" : <Link to={`/payment/${_id}/${day}`} >RESERVE</Link> : ("Select Date Range")}</button>
                     <p style={{ color: "#969696" }}>You won't be charged yet</p>
-                   {day>0?<div> <div className="prices" >
+                    {day > 0 ? <div> <div className="prices" >
                         <p>₹{data.price} x {day}nights </p>
-                        <p>₹{day*data.price}</p>
+                        <p>₹{day * data.price}</p>
                     </div>
-                    <div className="prices" >
-                        <p>Service fee </p>
-                        <p>₹2499</p>
-                    </div>
-                    <hr />
-                    <div className="prices" >
-                        <h2><strong>Total before taxes</strong></h2>
-                        <h2><strong>₹{2499+(data.price*day)}</strong></h2>
-                    </div></div>:""}
+                        <div className="prices" >
+                            <p>Service fee </p>
+                            <p>₹{Math.round(data.price * day * .12)}</p>
+                        </div>
+                        <hr />
+                        <div className="prices" >
+                            <h2><strong>Total before taxes</strong></h2>
+                            <h2><strong>₹{2499 + (data.price * day)}</strong></h2>
+                        </div></div> : ""}
                 </div>
             </div>
             <br />
@@ -147,17 +146,17 @@ if(end && start){
             <br />
             <div className="bedroom">
                 <div>
-                <h1 style={{ marginLeft: "100px"}}>  <strong>Where you'll sleep</strong>  </h1>
-                <br />
-                <img src={data.bedroom_image} alt="" />
+                    <h1 style={{ marginLeft: "100px" }}>  <strong>Where you'll sleep</strong>  </h1>
+                    <br />
+                    <img src={data.bedroom_image} alt="" />
 
-                <h5 style={{ marginLeft: "100px", marginTop: "10px", textDecoration: "none" }}><strong>Bedroom</strong> </h5>
-    
+                    <h5 style={{ marginLeft: "100px", marginTop: "10px", textDecoration: "none" }}><strong>Bedroom</strong> </h5>
+
                 </div>
                 <div className="bedroom-ptag">
-                   
+
                     <div>
-                    <h1><strong>What this place offers</strong></h1>
+                        <h1><strong>What this place offers</strong></h1>
                         <h3><ion-icon name="wifi-outline"></ion-icon> Wifi</h3>
                         <h3><ion-icon name="bonfire-outline"></ion-icon> Dryer</h3>
                         <h3><ion-icon name="flower-outline"></ion-icon> Garden </h3>
@@ -170,12 +169,12 @@ if(end && start){
                         <h3><ion-icon name="medkit-outline"></ion-icon> First Aid Kit</h3>
                         <h3><ion-icon name="thermometer-outline"></ion-icon> Thermometer</h3>
                         <h3><ion-icon name="shirt-outline"></ion-icon> One T-Shirt</h3>
-                        <h3><ion-icon name="notifications-off-circle-outline"></ion-icon> Alarm is Prohabited</h3>
+                        <h3><ion-icon name="notifications-off-circle-outline"></ion-icon> Alarm is prohibited</h3>
                     </div>
-                    </div>        
+                </div>
             </div>
         </div>
-        
+        <Footer></Footer>
     </div>)
 }
 

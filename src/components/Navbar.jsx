@@ -1,17 +1,24 @@
 import "../css/Navbar.css"
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { useState } from "react";
-
+import { useState ,useEffect} from "react";
 import airbnb from "../images/airbnbimgg.png"
 import burger from "../images/burger.png"
 import searchicon from "../images/searchiconredbg.png"
 import signinicon from "../images/signinicon.png"
-
+import {loadData,saveData} from "./localStorage.js";
 
 export const Navbar = () => {
+  let navigate=useNavigate();
   let [debounceArr,serDebounceArr]=useState([]);
   let [searchText,setSearchText]=useState("");
+  let [dropEffect,setDropEffect]=useState(false);
+  let [localData,setLocalData]=useState({});
+  useEffect(()=>{
+  let temp=loadData("token");
+setLocalData(temp);
+    
+  },[])
   let timerId;
       return(
 <>
@@ -63,11 +70,11 @@ export const Navbar = () => {
             }
            }}
            />
-         <div id="showdebounce" className="flex w-4/12 justify-center border-violet-100 border-2 border-solid rounded-full">
+         <div id="showdebounce" className="border-violet-100 border-2 border-solid rounded-full">
          {debounceArr.map((element,id)=>(
-                 <h1 onClick={()=>{
+                 <h2 onClick={()=>{
                    document.getElementById("showdebounce").style.display="none"
-                 }}> <Link to={`/city/${element}`} key={id} style={{margin:"10px"}}>{element}</Link> </h1>
+                 }}> <Link to={`/city/${element}`} key={id} style={{}}>{element} </Link> </h2>
                  ))
          }
            </div>
@@ -83,7 +90,22 @@ export const Navbar = () => {
          
              </div>
 
-
+             <div id="drop-down" onClick={(()=>{
+               setTimeout(()=>{
+               document.getElementById("drop-down").style.display="none"
+               },2000)
+             })}>
+           <p onClick={(e)=>{
+             console.log(e.target.textContent);
+             if(e.target.textContent=="Logout"){
+               saveData("token","");
+             }else{
+             return  navigate("/login");
+             }
+           }}>{localData.token?"Logout":"Login"} </p>
+           <p>WishList </p>
+           <p> Trips</p>
+         </div>
        <div className="flex items-center">
     
        <svg className="w-4 h-4">
@@ -91,20 +113,30 @@ export const Navbar = () => {
          </svg>
 
        <button className="ml-4 border-2 border-solid border-grey-200 rounded-full px-2 py-1 shadow-slate-400">
-
         <div className="flex items-center">
 
-       <img className="w-4 h-4" src={burger} alt=""/>
-        <img className="w-6 rounded-full ml-1"  src={signinicon} alt=""/>
+       <img className="w-4 h-4" src={burger}
+      
+       alt=""/>
+        <img 
+         onClick={()=>{
+          setDropEffect((prev)=>!prev);
+          console.log(dropEffect);
+          if(dropEffect){
+            document.getElementById("drop-down").style.display="block"
+          }
+          else{
+           document.getElementById("drop-down").style.display="none"
+ 
+          }
+        }}
+        className="w-6 rounded-full ml-1"  src={signinicon} alt=""/>
        </div>
 
          </button>
            </div> 
           </div>
   </div>
-
-
-
 </>
       )
 }

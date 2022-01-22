@@ -5,7 +5,7 @@ import { Route,Routes } from 'react-router-dom';
 import { Landingpage } from './components/Landinpage';
 import { City } from './components/City';
 import { Place } from './components/Place';
-
+import { Login } from './components/Login';
 import { Payment } from './components/Payment';
 function App() {
   return (
@@ -22,6 +22,8 @@ function App() {
        <Route path="/id/:_id" element={<Place/>}>
        </Route>
        <Route path="/payment/:_id/:day" element={<Payment/>}>
+       </Route>
+       <Route path="/login" element={<Login/>}>
        </Route>
      </Routes>
 
