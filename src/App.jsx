@@ -7,6 +7,7 @@ import { City } from './components/City';
 import { Place } from './components/Place';
 import { Login } from './components/Login';
 import { Payment } from './components/Payment';
+import { Order } from './components/Orderconfirm';
 function App() {
   return (
     <div className="App">
@@ -24,6 +25,8 @@ function App() {
        <Route path="/payment/:_id/:day" element={<Payment/>}>
        </Route>
        <Route path="/login" element={<Login/>}>
+       </Route>
+       <Route path="/order/:Oid" element={<Order/>}>
        </Route>
      </Routes>
 
