@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
-import { pp_Loading } from "../reducers/reducer/action";
+import { payment_Error, payment_Req, payment_Success, pp_Loading } from "../reducers/reducer/action";
 import loading_gif from "../images/spinning-loading.gif"
 import { data } from "autoprefixer";
 
@@ -21,6 +21,9 @@ export const Payment = () => {
     const [temp,setTemp] = useState('');
     const dispatch = useDispatch();
     const loading = useSelector((state) => state.p_Loading);
+    const payReq = useSelector((state) => state.payReq);
+    const paySuccess = useSelector((state) => state.paySuccess); 
+    const payError = useSelector((state) => state.payError);  
    
 
      const paymentData = () => {
@@ -58,11 +61,28 @@ export const Payment = () => {
 
        const handleClick = () => {
         
-        console.log(form)
+        dispatch(payment_Req());
 
+        let no = form.cardNumber;
+        if(no === undefined || no === "" || no.length !== 16 ){console.log(1) ;dispatch(payment_Error()) ; return ;}
+
+        let cvv = form.cvv;
+        if(cvv === undefined || cvv === "" || cvv.length !== 3 ){console.log(2) ; dispatch(payment_Error()) ; return ;}
+
+        let name = form.name;
+        if(name === undefined || name === "" ){console.log(3) ; dispatch(payment_Error()) ; return ;}
+
+        let expiry = form.expiry;
+        if(expiry === undefined || expiry === "" || expiry.length !== 5  ){console.log(4) ; dispatch(payment_Error()) ; return ; }
+           
+        let verify = expiry.split('');
+        if(!verify.includes('/')){console.log(4) ; dispatch(payment_Error()) ; return ;}
+
+        dispatch(payment_Success());
+        navigate('/')
        }
 
-       if(loading === true) {
+       if(loading === true || payReq === true) {
            return (
                <div>
                    <div className="h-20"></div>
@@ -77,7 +97,7 @@ export const Payment = () => {
     return (
 
         <>
-    
+         
          <div className="h-20"></div>
 
          <div className="w-9/12 m-auto flex mt-10">
@@ -91,7 +111,11 @@ export const Payment = () => {
             </div>
             <hr className="border-1 border-gray-300 mt-10 mb-5" />
 
-            <div className="text-lg font-semibold">Pay with <h4 className="text-sm">CARDS (CREDIT/DEBIT)</h4></div>
+            <div className="text-lg font-semibold">Pay with <h4 className="text-sm">CARDS (CREDIT/DEBIT)</h4>
+            
+            {payError === true?  <h2 className="text-red-500 text-justify text-base ">Please provide correct credentials</h2> : null}
+            
+            </div>
 
             <h4 className="mt-5">Card</h4>
 
@@ -129,8 +153,8 @@ export const Payment = () => {
 
          <p className=" text-xs">By selecting the button below, I agree to the Host's House Rules, Airbnb's COVID-19 Safety Requirements and the Guest Refund Policy.</p>
            
-           <button onClick={handleClick} className="p-2 px-3 text-sm rounded-md text-center mt-5 bg-red-600 text-white">Confirm and pay</button>
-
+           <button  onClick={handleClick} className="p-2 px-3 text-sm rounded-md text-center mt-5 bg-red-600 text-white">Confirm and pay</button>
+              {payError === true?  <h2 className="text-red-500 text-justify text-base ">Please provide correct credentials</h2> : null}
        </div>
 
 
