@@ -23,7 +23,7 @@ setLocalData(temp);
     let temp=loadData("token");
   setLocalData(temp);
       
-    },[localData])
+    },[])
   let timerId;
       return(
 <>
@@ -114,7 +114,7 @@ setLocalData(temp);
              }
            }}>{localData.userName?"Logout":"Login"} </p>
            <p>WishList </p>
-           <p>Trips</p>
+           <p onClick={() => navigate('/trips')}>Trips</p>
          </div>
        <div className="flex items-center">
     
