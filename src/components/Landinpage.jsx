@@ -35,9 +35,9 @@ const navigate = useNavigate();
 
      <div className="flex w-12/12 m-auto gap-5 mt-5">
 
-         {Place_arr.map((e) => (
+         {Place_arr.map((e , i) => (
             
-               <div>
+               <div key={i}>
                  <Link to={`/city/${e.name}`}>
                  <img className="rounded-t-2xl pb-4 bg-red-600" src={e.image} alt={e.name}/>
                  <h2 className="text-2xl pt-1 pl-2 pb-20 bg-red-600 text-purple-50 rounded-b-2xl mb-10" >{e.name}</h2>
