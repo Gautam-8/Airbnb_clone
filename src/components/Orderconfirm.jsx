@@ -51,7 +51,7 @@ export const Order = () => {
     }
 
     if(orderLoading === false ){
-        setTimeout(() => navigate('/') , 5000)
+        setTimeout(() => navigate('/trips') , 5000)
     }
 
     return(
@@ -68,7 +68,7 @@ export const Order = () => {
     <h3>{thank.city} , {thank.state}</h3>
   
 
-   <button onClick={() => navigate('/')} className="p-2 px-3 text-sm rounded-md text-center mt-5 bg-red-600 text-white">Continue</button>
+   <button onClick={() => navigate('/trips')} className="p-2 px-3 text-sm rounded-md text-center mt-5 bg-red-600 text-white">Continue</button>
     </div>
  
  <div className="w-6/12">
