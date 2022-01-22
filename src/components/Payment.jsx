@@ -95,7 +95,7 @@ export const Payment = () => {
 
             <h4 className="mt-5">Card</h4>
 
-            <input onChange={handleChange} name="cardNumber" type='number' placeholder="Enter Card Number" className="rounded-lg  mt-2 w-8/12 h-10 text-xs border-2 border-gray-300 border-solid text-center"/>
+            <input onChange={handleChange} name="cardNumber" type='password' placeholder="Enter Card Number" className="rounded-lg  mt-2 w-8/12 h-10 text-xs border-2 border-gray-300 border-solid text-center"/>
 
             <div className="flex">
              
@@ -106,7 +106,7 @@ export const Payment = () => {
           
              <div className="ml-4">
              <h4 className="mt-5">CVV</h4>
-             <input onChange={handleChange} name='cvv' type='number' placeholder="Enter CVV" className="rounded-lg mt-2 w-12/12 h-10 text-xs border-2 border-gray-300 border-solid text-center"/> 
+             <input onChange={handleChange} name='cvv' type='password' placeholder="Enter CVV" className="rounded-lg mt-2 w-12/12 h-10 text-xs border-2 border-gray-300 border-solid text-center"/> 
              </div>
 
             </div> 
