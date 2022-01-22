@@ -13,7 +13,7 @@ export const Navbar = () => {
   let [debounceArr,serDebounceArr]=useState([]);
   let [searchText,setSearchText]=useState("");
   let [dropEffect,setDropEffect]=useState(false);
-  let [localData,setLocalData]=useState("");
+  let [localData,setLocalData]=useState({});
   useEffect(()=>{
   let temp=loadData("token");
 setLocalData(temp);
@@ -104,20 +104,13 @@ setLocalData(temp);
                document.getElementById("drop-down").style.display="none"
                },2000)
              })}>
-           <p onClick={(e)=>{
-             if(loadData("token")==null)
-             saveData("token","")
-             if(loadData("token")){
-               saveData("token", "");
-               setLocalData("");
-             }else{
-              setLocalData(loadData("token"));
-             return  navigate("/login");
-             }
-           }}>{localData.username?"Logout":"Login"} </p>
+           <p >{localData?<p onClick={()=>{
+            saveData("token", "");
+            setLocalData("");
+           }}>Logout</p>:<p><Link to={"/login"}>Login</Link></p>} </p>
            <p onClick={()=>{
              navigate("/signup")
-           }}> {localData.username!=null?"":"SignUp"}</p>
+           }}> {localData?"":"SignUp"}</p>
            <p>WishList </p>
            <p onClick={() => navigate('/trips')}>Trips</p>
          </div>

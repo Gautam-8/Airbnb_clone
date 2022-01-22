@@ -27,6 +27,7 @@ export const Login=()=>{
             fetchmyData(user_data.username,res.token);
         })
         .catch((err)=>{
+            alert("Please input correct credentials")
           console.log(err);
         });
     }
@@ -49,7 +50,7 @@ export const Login=()=>{
         let currentusername=res.username;
         console.log(currentusername);
         localStorage.setItem("token",JSON.stringify(currentusername));
-        window.location.href="/";
+        navigate("/")
     })
     .catch((e)=>{
         console.log(e);
