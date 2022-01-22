@@ -31,11 +31,8 @@ export const Order = () => {
     }
 
     useEffect(() => {
-       
-        
-        OrderData();
-        
-    } , [])
+       OrderData();
+ } , [])
 
     const navigate = useNavigate();
 
@@ -54,7 +51,7 @@ export const Order = () => {
     }
 
     if(orderLoading === false ){
-        setTimeout(() => navigate('/') , 4000)
+        setTimeout(() => navigate('/') , 5000)
     }
 
     return(
