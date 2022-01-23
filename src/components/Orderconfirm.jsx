@@ -22,12 +22,28 @@ export const Order = () => {
         setTimeout(() => {
 
             axios.get(`https://airbnb-fw12.herokuapp.com/hotel/${Oid}`)
-            .then((res) => { setThank(res.data); dispatch(order_Success())})
+            .then((res) => { setThank(res.data); pushtripData(res.data)})
             .catch((err) => console.log(err))
 
         } , 1000)
       
     }
+
+    const pushtripData = (tdata) => {
+
+        let data = localStorage.getItem('token')
+        data = JSON.parse(data);
+
+        let tripData = tdata;
+        tripData.name = data;
+      
+         axios.post(`https://airbnb-fw12.herokuapp.com/trips` , tripData)
+        .then((res) => console.log(res.data))
+        .catch((err) => console.log(err.message));
+
+        dispatch(order_Success());
+
+       }
 
     useEffect(() => {
        OrderData();
@@ -76,7 +92,7 @@ export const Order = () => {
          
 </div>
 
-<img className="w-2/12 m-auto" src={'https://www.icegif.com/wp-content/uploads/icegif-1436.gif'}/>
+<img className="w-2/12 m-auto" src={'https://www.icegif.com/wp-content/uploads/icegif-1436.gif'} alt=''/>
  <div className="m-auto bg-gray-100 flex justify-evenly pb-10 text-xs tracking-wide pt-5">
 
 {lastline} 
