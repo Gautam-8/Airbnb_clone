@@ -35,7 +35,7 @@ export const Order = () => {
         data = JSON.parse(data);
 
         let tripData = tdata;
-        tripData.name = data.userName;
+        tripData.name = data;
          
         axios.post(`https://airbnb-fw12.herokuapp.com/trips` , tripData)
         .then((res) => console.log(res.data))
