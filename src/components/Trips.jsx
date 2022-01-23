@@ -60,7 +60,7 @@ export const Trips = () => {
          
          <div className="h-20"></div>
 
-         <h1 className="text-2xl font-semibold ml-20" > {<i className="mr-10 cursor-pointer" onClick={() => navigate('/')}>{'<'}</i>}Your trips</h1>
+         <h1 className="text-2xl font-semibold ml-20" > {<i className="mr-10 cursor-pointer" onClick={() => navigate('/Airbnb_clone')}>{'<'}</i>}Your trips</h1>
 
          <div className="grid grid-cols-2 w-10/12 m-auto">
              {tripShow.length > 0 ? 
