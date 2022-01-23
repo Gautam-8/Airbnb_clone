@@ -1,8 +1,11 @@
 import { useState } from "react"
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 import "../css/Login.css"
+import { logIn } from "../reducers/reducer/action";
 export const Login=()=>{
+    let dispatch = useDispatch();
     let [admin,setAdmin]=useState(false);
     let navigate=useNavigate();
     function logi(e){
@@ -52,6 +55,7 @@ export const Login=()=>{
         let currentusername=res.username;
         console.log(currentusername);
         localStorage.setItem("token",JSON.stringify(currentusername));
+        dispatch(logIn())
         navigate('/')
     })
     .catch((e)=>{
