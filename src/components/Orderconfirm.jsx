@@ -92,7 +92,7 @@ export const Order = () => {
          
 </div>
 
-<img className="w-2/12 m-auto" src={'https://www.icegif.com/wp-content/uploads/icegif-1436.gif'}/>
+<img className="w-2/12 m-auto" src={'https://www.icegif.com/wp-content/uploads/icegif-1436.gif'} alt=''/>
  <div className="m-auto bg-gray-100 flex justify-evenly pb-10 text-xs tracking-wide pt-5">
 
 {lastline} 
