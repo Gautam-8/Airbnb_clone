@@ -22,12 +22,28 @@ export const Order = () => {
         setTimeout(() => {
 
             axios.get(`https://airbnb-fw12.herokuapp.com/hotel/${Oid}`)
-            .then((res) => { setThank(res.data); dispatch(order_Success())})
+            .then((res) => { setThank(res.data); pushtripData(res.data)})
             .catch((err) => console.log(err))
 
         } , 1000)
       
     }
+
+    const pushtripData = (tdata) => {
+
+        let data = localStorage.getItem('token')
+        data = JSON.parse(data);
+
+        let tripData = tdata;
+        tripData.name = data.userName;
+         
+        axios.post(`https://airbnb-fw12.herokuapp.com/trips` , tripData)
+        .then((res) => console.log(res.data))
+        .catch((err) => console.log(err.message));
+
+        dispatch(order_Success());
+
+       }
 
     useEffect(() => {
        OrderData();
