@@ -82,6 +82,7 @@ export const Payment = () => {
        navigate(`/order/${id}`)
        }
 
+      
        if(loading === true || payReq === true) {
            return (
                <div>
