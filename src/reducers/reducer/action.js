@@ -1,4 +1,4 @@
-import { DATA, ORDER, PAYMENTPAGE_LOADING, PAYMENT_ERROR, PAYMENT_REQ, PAYMENT_SUCCESS } from "./actionTypes";
+import { DATA, LOGIN, LOGOUT, ORDER, PAYMENTPAGE_LOADING, PAYMENT_ERROR, PAYMENT_REQ, PAYMENT_SUCCESS } from "./actionTypes";
 export const  dataAction=(data)=>({type:DATA,payload:data});
 
 export const pp_Loading = () => ({
@@ -20,4 +20,10 @@ export const payment_Error = () => ({
 export const order_Success = () => ({
     type:ORDER,
 })
- 
+
+export const logOut = () => ({
+    type:LOGOUT,
+})
+export const logIn = () => ({
+    type:LOGIN,
+})
