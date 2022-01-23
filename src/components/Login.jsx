@@ -1,8 +1,10 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
+
+import "../css/Login.css"
 export const Login=()=>{
     let [admin,setAdmin]=useState(false);
-    let navigate=  useNavigate();
+    let navigate=useNavigate();
     function logi(e){
         e.preventDefault();
         let form=document.getElementById("login-form");
@@ -56,18 +58,35 @@ export const Login=()=>{
         console.log(e);
     });
     }
-    return (<div id="login">
-        <br /><br />
+    return (<div>
         <br />
-    <form onSubmit={(e)=>{
-        logi(e);
-    }} id="login-form">
-        <h1>Login</h1>
-        <input type="password" id="pass" placeholder="Password"></input>
-        <input type="text" id="user" placeholder="Username"></input>
-        <input type="submit"></input>
-    </form>
-</div>)
+        <br />
+        <br />
+        <br />
+        <div id="login">
+      
+       <form onSubmit={(e)=>{
+           logi(e);
+       }} id="login-form">
+           <h2>&nbsp;&nbsp;<span onClick={()=>{
+               navigate(-1);
+           }} > &times;</span></h2>
+           <br />
+           
+          <label htmlFor="">Username </label>
+          <br /> <input autoComplete="off" type="text" id="user" placeholder="Username"></input>
+           <br />
+           <br />
+           <label htmlFor="">Password  &nbsp;</label> 
+           <br />
+           <input autoComplete="off" type="password" id="pass" placeholder="Password"></input>
+           <br />
+           <br />
+   
+           <input id="type-submit" type="submit"></input>
+       </form>
+   </div>
+        </div>)
 }
 
 

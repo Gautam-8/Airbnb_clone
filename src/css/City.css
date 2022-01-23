@@ -14,13 +14,14 @@
     
 }
 .single-place > h5{
+    text-decoration: none;
     max-width: 200px;
     margin-left: 20px;
     line-height: 20px;
     font-size: 14px;
 }
 .single-place>h3{
-    margin-left: 10px;
+    margin-left: 20px;
     margin-top: 30px;
 }
 .single-place>span{

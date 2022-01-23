@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import "../css/SignUp.css"
 export const SignUp=()=>{
     const navigate=useNavigate();
      function Sign(e){//https://github.com/masai-school/api-mocker.wiki.git
@@ -40,20 +41,32 @@ export const SignUp=()=>{
             console.log(err);
         })
         }
-    return (<div id="signup">
+    return (<div>
         <br />
         <br /><br /><br />
+        <div id="signup">
+        
     <form onSubmit={(e)=>{
         Sign(e);
     }} id="signup-form">
-        <h1>Signup</h1>
-        <input type="text" id="name" placeholder="Name"></input>
-        <input type="email" id="email" placeholder="Email"></input>
-        <input type="password" id="password" placeholder="Password"></input>
-        <input type="text" id="username" placeholder="Username"></input>
-        <input type="number" id="mobile" placeholder="Mobile"></input>
-        <input type="text" id="description" placeholder="Description"></input>
-        <input type="submit"></input>
+       <h2>&nbsp;&nbsp;<span onClick={()=>{
+               navigate(-1);
+           }} > &times;</span></h2>
+
+ <input type="text" id="name" placeholder="Name"></input>
+       <br />
+   <input type="email" id="email" placeholder="Email"></input>
+      <br />
+  <input type="password" id="password" placeholder="Password"></input>
+       <br />
+   <input type="text" id="username" placeholder="Username"></input>
+      <br />
+ <input type="number" id="mobile" placeholder="Mobile"></input>
+         <br />
+ <input type="text" id="description" placeholder="Description"></input>
+      <br />
+        <input id="type-submit" type="submit"></input>
     </form>
-</div>)
+</div>
+    </div>)
 }
