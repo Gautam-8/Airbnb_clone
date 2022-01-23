@@ -7,8 +7,11 @@ import burger from "../images/burger.png"
 import searchicon from "../images/searchiconredbg.png"
 import signinicon from "../images/signinicon.png"
 import {loadData,saveData} from "./localStorage.js";
+import { useDispatch } from "react-redux";
+import { logOut } from "../reducers/reducer/action";
 
 export const Navbar = () => {
+  let dispatch = useDispatch();
   let navigate=useNavigate();
   let [debounceArr,serDebounceArr]=useState([]);
   let [searchText,setSearchText]=useState("");
@@ -107,6 +110,7 @@ setLocalData(temp);
            <p >{localData?<p onClick={()=>{
             saveData("token", "");
             setLocalData("");
+            dispatch(logOut());
            }}>Logout</p>:<p><Link to={"/login"}>Login</Link></p>} </p>
            <p onClick={()=>{
              navigate("/signup")
