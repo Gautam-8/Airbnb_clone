@@ -21,8 +21,6 @@ export const Payment = () => {
     const [temp,setTemp] = useState('');
     const dispatch = useDispatch();
     const loading = useSelector((state) => state.p_Loading);
-    const payReq = useSelector((state) => state.payReq);
-    const paySuccess = useSelector((state) => state.paySuccess); 
     const payError = useSelector((state) => state.payError);  
    
 
@@ -83,7 +81,7 @@ export const Payment = () => {
        }
 
       
-       if(loading === true || payReq === true) {
+       if(loading === true) {
            return (
                <div>
                    <div className="h-20"></div>
