@@ -8,7 +8,7 @@ export const Trips = () => {
         let data = localStorage.getItem('token')
         data = JSON.parse(data);
 
-        axios.get(`https://airbnb-fw12.herokuapp.com/trips/${data.userName}`)
+        axios.get(`https://airbnb-fw12.herokuapp.com/trips/${data}`)
         .then((res) => console.log(res.data))
         .catch((err) => console.log(err.message))
 
