@@ -56,7 +56,7 @@ export const Login=()=>{
         console.log(currentusername);
         localStorage.setItem("token",JSON.stringify(currentusername));
         dispatch(logIn())
-        navigate('/')
+        navigate('/Airbnb_clone')
     })
     .catch((e)=>{
         console.log(e);
