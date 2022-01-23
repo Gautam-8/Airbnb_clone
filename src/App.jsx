@@ -22,7 +22,7 @@ function App() {
 
      <Routes>
        
-       <Route path="/" element={<Landingpage />}>
+       <Route path="/Airbnb_clone" element={<Landingpage />}>
        </Route>
        <Route path="/city/:city" element={<City/>}>
        </Route>
