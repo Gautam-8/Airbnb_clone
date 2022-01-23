@@ -31,9 +31,9 @@ const navigate = useNavigate();
 
        
      <div className="w-10/12 m-auto mt-10">
-      <h1 className="text-3xl font-bold" >Inspiration for your next trip</h1>
+      <h1 className="text-3xl font-bold ml-0" >Inspiration for your next trip</h1>
 
-     <div className="grid grid-cols-2 md:grid-cols-4 w-12/12 m-auto gap-6 mt-5 md:">
+     <div className="grid grid-cols-2 md:grid-cols-4 w-12/12 m-auto gap-6 mt-10">
 
          {Place_arr.map((e , i) => (
             
@@ -56,16 +56,16 @@ const navigate = useNavigate();
 
 <h1 className="font-bold text-3xl" >Discover Airbnb Experiences</h1>
 
-     <div className="grid grid-cols-1 md:grid-cols-2 w-12/12 m-auto gap-5 mt-5">
+     <div className="grid grid-cols-1 md:grid-cols-2 w-12/12 m-auto gap-0 mt-0 md:mt-5">
 
         <div id='bgimge1'>
            
-           <h1 className="text-3xl mt-10 md:text-4xl text-white">Things to do on your trip</h1>
+           <h1 className="text-3xl pt-10 md:text-4xl text-white">Things to do on your trip</h1>
 
          </div>
 
          <div id='bgimge2'>
-         <h1 className="text-3xl mt-10 md:text-4xl text-white">Things to do from home</h1>
+         <h1 className="text-3xl pt-10 md:text-4xl text-white">Things to do from home</h1>
 
          </div>
  </div>
