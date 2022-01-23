@@ -1,4 +1,22 @@
+import { useEffect } from "react";
+import axios from "axios";
+
 export const Trips = () => {
+
+    const gettripData = () => {
+
+        let data = localStorage.getItem('token')
+        data = JSON.parse(data);
+
+        axios.get(`https://airbnb-fw12.herokuapp.com/trips/${data.userName}`)
+        .then((res) => console.log(res.data))
+        .catch((err) => console.log(err.message))
+
+       }
+
+       useEffect(() => {
+           gettripData();
+       } , [])
 
     return(
 
