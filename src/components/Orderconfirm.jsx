@@ -36,8 +36,8 @@ export const Order = () => {
 
         let tripData = tdata;
         tripData.name = data;
-         
-        axios.post(`https://airbnb-fw12.herokuapp.com/trips` , tripData)
+      
+         axios.post(`https://airbnb-fw12.herokuapp.com/trips` , tripData)
         .then((res) => console.log(res.data))
         .catch((err) => console.log(err.message));
 
