@@ -34,7 +34,7 @@ setLocalData(temp);
 
         <div className="p-4 flex justify-around border-b-2 border-solid  border-violet-50">
 
-             <Link to={'/'} onClick={()=>{
+             <Link to={'/Airbnb_clone'} onClick={()=>{
                
                  setLocalData(loadData("token"));
              }}> <img src={airbnb} className="w-20 h-6 mr-20px" alt=""/></Link>
