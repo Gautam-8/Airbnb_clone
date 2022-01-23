@@ -1,6 +1,10 @@
 
-import { DATA, ORDER, PAYMENTPAGE_LOADING, PAYMENT_ERROR, PAYMENT_REQ, PAYMENT_SUCCESS } from "./actionTypes";
-let init={data:[] , p_Loading:true , payReq:false , paySuccess:false , payError:false , order : true };
+import { loadData } from "../../components/localStorage";
+import { DATA, LOGIN, LOGOUT, ORDER, PAYMENTPAGE_LOADING, PAYMENT_ERROR, PAYMENT_REQ, PAYMENT_SUCCESS } from "./actionTypes";
+
+let token = loadData('token');
+
+let init={data:[] , p_Loading:true , payReq:false , paySuccess:false , payError:false , order : true, loginAuth : token? true : false};
 export const reducer=(state=init,{type,payload})=>{
     switch(type){
         case DATA:
@@ -35,6 +39,18 @@ export const reducer=(state=init,{type,payload})=>{
                     return{
                         ...state,
                           order:false
+                    }
+
+                    case LOGOUT : 
+                    return{
+                        ...state,
+                        loginAuth : false
+                    }
+
+                    case LOGIN : 
+                    return{
+                        ...state,
+                        loginAuth : true
                     }
 
                 default :
