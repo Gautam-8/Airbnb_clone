@@ -96,7 +96,7 @@ export const Trips = () => {
              
              <div className=" justify-center">
                  <h1 className="m-6 text-2xl">No trips planned</h1>
-                 <button onClick={() => navigate('/')} className="p-3 px-4 text-2xl rounded-md text-center ml-6 bg-red-600 text-white">Continue</button>
+                 <button onClick={() => navigate('/Airbnb_clone')} className="p-3 px-4 text-2xl rounded-md text-center ml-6 bg-red-600 text-white">Continue</button>
              </div>
              
              }
