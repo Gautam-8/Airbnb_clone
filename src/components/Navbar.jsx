@@ -127,7 +127,7 @@ setLocalData(temp);
         <div className="flex items-center">
 
        <img className="w-4 h-4" src={burger}
-      
+
        alt=""/>
         <img 
          onClick={()=>{
