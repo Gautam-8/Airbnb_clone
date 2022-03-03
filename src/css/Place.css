@@ -1,0 +1,154 @@
+#city {
+   
+}
+h5{
+    height: 10px;
+    font-size: 10px;
+    text-decoration: underline;
+    margin-left: 50px;
+}
+h1{
+    margin-left:50px ;
+}
+#five-images{
+    display:grid;
+    grid-gap: 20px;
+    grid-template-columns: 50% 50%;
+    padding: 30px;
+    min-height: 300px;
+    margin-left: 3%;
+}
+#five-images img{
+    max-height: 150px;
+    border-radius: 10px;
+}
+#five-images >div:nth-child(1)>img{
+    max-height: 400px;
+    min-height: 200px;
+}
+#five-images>div:nth-child(2)  {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-gap:20px;
+    justify-content: space-around;
+    margin-right: 20px;
+
+}
+
+#five-images>div:nth-child(2) >img {
+width:300px;
+}
+
+.instruction > p{
+  margin-left: 60px;
+  line-height: 15px;
+  font-size: 14px;
+}
+#middle-data{
+    display: grid;
+    justify-content: space-around;
+    grid-template-columns: 60% 30%;
+}
+.instruction > img{
+    margin-left: 100px;
+    height: 300px;
+    width: 300px;
+    border-radius: 50px;
+}
+.dates{
+    display: flex;
+    justify-content: space-around;
+}
+.dates > input{
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+.dates > input:focus{
+    outline: none;
+}
+.dates >p{
+    font-size: 12px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+#proceed > div > select{
+    width: 98%;
+    border: none;
+    margin-left: 2%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+#proceed > div > select:focus{
+    outline: none;  
+}
+
+#proceed{
+    border: 1px solid #969696;
+    border-radius: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-shadow: 4px 3px 8px 1px #969696;
+    -webkit-box-shadow: 4px 3px 8px 1px #969696;
+}
+#proceed > button{
+    background-color: #D22779;
+    width: 96%;
+    border: none;
+    margin-left: 2%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding: 10px;
+    border-radius: 30px;
+    color: white;
+}
+#proceed >p{
+    text-align: center;
+}
+.prices{
+    display: flex;
+    justify-content: space-between;
+}
+.prices > p{
+    margin: 10px;
+    line-height: 15px;
+    color: #969696;
+    font-size: 15px;
+}
+.prices > p:nth-child(1){
+    text-decoration: underline;
+}
+.prices >h2{
+    line-height: 17px;
+    margin: 10px;
+
+}
+.bedroom>div >img{
+    margin-left: 100px;
+    height: 300px;
+    width: 300px;
+    border-radius: 50px;
+}
+.bedroom{
+    display: grid;
+    grid-template-columns: 30% 60%;
+}
+.bedroom-ptag{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.bedroom-ptag h3{
+    margin-left: 15%;
+    line-height: 40px;
+    font-size: 20px;
+    margin-top: 10px;
+}
+.bedroom-ptag > div{
+    margin: 40px;
+    padding: 20px;
+}
+.bedroom-ptag h1{
+    line-height: 30px;
+    font-size: 20px;
+}

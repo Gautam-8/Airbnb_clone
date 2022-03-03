@@ -1,0 +1,41 @@
+.single-place > img{
+    margin: 20px;
+    border-radius: 10px;
+    width: 200px;
+    height: 150px;
+}
+#places > div :nth-child(1){
+    margin-top: 100px;
+}
+
+.single-place > h3:nth-child(1){
+    color: black;
+    height: 10px;
+    
+}
+.single-place > h5{
+    text-decoration: none;
+    max-width: 200px;
+    margin-left: 20px;
+    line-height: 20px;
+    font-size: 14px;
+}
+.single-place>h3{
+    margin-left: 20px;
+    margin-top: 30px;
+}
+.single-place>span{
+    line-height: 10px;
+    font-size: 10px;
+}
+.single-place > ion-icon{
+    margin-left: 20px;
+    height: 12px;
+    line-height: 10px;
+    color: #FF6363;
+}
+#places{
+    display: grid;
+    justify-content: space-evenly;
+    grid-template-columns: 25% 25% 25%;
+}

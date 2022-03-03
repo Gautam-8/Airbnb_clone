@@ -9,15 +9,12 @@
     
   }
   
-  #bgimg button{
+  /* #bgimg button{
     margin-top:40%;
     margin-left:45%;
    
-  }
+  } */
 
-  #search-input:focus {
-      outline:none;
-  }
   #bgimge1{
    border-radius:5% ;
     padding:5%;
